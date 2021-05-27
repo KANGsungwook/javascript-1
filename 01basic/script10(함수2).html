@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // 익명함수
+        //a(); 호이스팅x 
+        var a = function() {
+            console.log('익명함수1');
+        }
+
+        var b = function(a, b) {
+            console.log('익명함수2');
+            return a + b;
+        }
+        a();
+        console.log(b(1,2));
+
+        
+        //화살표함수 (ES6)
+        //리턴값이 1개라면 {}는 생략 가능
+        var arrow = (a, b) => a + b;
+        var arrow2 = (x) => {
+            var y = x * 10;
+            return y;
+        }
+        console.log(arrow(10, 20));
+        console.log(arrow2(10));
+
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //JSON 파싱 - 원격에 있는 데이터를 읽어올 때, 문자열로 변환되어 전송됨
+        //그 데이터를 다시 사용하려면 object형태로 재변환해야함.
+        var data = [
+            {id: 'kkk123', title: 'java'},
+            {id: 'aaa123', title: 'jsp'},
+            {id: 'bbb123', title: 'js'},
+        ]
+
+        console.log(data);
+
+        var result = JSON.stringify(data); // JSON을 문자열로 변환
+        console.log(result);
+
+        var obj = JSON.parse(result); // 문자열을 JSON으로 변환
+        console.log(obj);
+
+        //단, 문자열을 제이슨형식으로 변경할 때에는 엄격한 규칙을 가짐.
+        // key, value값을 ""처리해야 함. '[{키:"aaa123"}]' -> error
+        var obj2 = JSON.parse('[{"키":"aaa123"}]');
+        console.log(obj2);
+
+    </script>
+    
+</body>
+</html>

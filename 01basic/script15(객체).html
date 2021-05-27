@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        var person = {name:'홍길동', age:20, arr:[1, 2, 3, 4]};
+
+        //JS의 객체에 접근하는 방법
+        console.log(person);
+        console.log(person.age);
+        console.log(person.name);
+        console.log(person.arr);
+        console.log(person.arr[2]);
+        console.log(person.arr.length);
+
+        //그 방법 둘!! - ["키"]
+        console.log(person["name"]);
+        console.log(person["age"]);
+        console.log(person["arr"]);
+        console.log(person["arr"][0]);
+
+        console.log('---------------');
+        var exam = {kor : 80, eng : 60, math : 90};
+        var hong = {name : '홍길동', exam : exam};
+
+        console.log(hong.name);
+        console.log(hong.exam);
+        console.log(hong.exam.kor);
+        console.log(hong.exam.eng);
+        console.log(hong.exam.math);
+
+        console.log('---------------');
+        console.log(hong["name"]);
+        console.log(hong["exam"]);
+        console.log(hong["exam"].kor);
+        console.log(hong["exam"]["kor"]);
+
+        for(var a in hong['exam']) {
+            console.log(a);
+        }
+
+        console.log('----------------------');
+        // 중첩반복문으로 subject에 있는 값 출력
+        var list = [
+            {
+                name: '홍길동',
+                age: 20,
+                subject: ['java', 'jsp', 'js'],
+                birth: 20210527
+            },
+            {
+                name: '이순신',
+                age: 30,
+                subject: ['css', 'db'],
+                birth: 20210529
+            }
+        ];
+
+        
+        var arr = new Array();
+        for(var i = 0; i < list.length; i++) {
+            for(var j = 0; j < list[i]['subject'].length; j++){
+                arr.push(list[i]['subject'][j]);
+                console.log(list[i].subject[j]);
+            }
+        }
+        console.log(arr);
+
+
+        //함수를 가지고 있는 객체
+        var obj = {
+            age: 10,
+            func: function() {
+                console.log('func');
+            }
+        }
+
+        console.log(obj.age);
+        obj.func();
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 1. change이벤트, innerHTML속성을 이용 -->
+    <h2 id="title">단어를 선택하세요</h2>
+    <p>(select에서 value속성은 선택된 값을 의미합니다)</p>
+
+    <select id="lang">
+        <option value="">선택</option>
+        <option value="hello">hello</option>
+        <option value="안녕">안녕</option>
+        <option value="nihao">nihao</option>
+    </select>
+
+
+    <script>
+
+        var head = document.getElementById("title");
+        var kor = document.getElementById("lang");
+        kor.addEventListener("change", function() {
+            
+            var lan = kor.value;
+
+            switch(lan) {
+                case 'hello' : 
+                head.innerHTML = '영어입니다';
+                break;
+                case '안녕' : 
+                head.innerHTML = '한국어입니다';
+                break;
+                case 'nihao' : 
+                head.innerHTML = '중국어입니다';
+                break;
+                default :
+                head.innerHTML = '단어를 선택하세요';
+            }
+
+        })
+
+    </script>
+
+</body>
+</html>

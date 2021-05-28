@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 1. 아래 checkbox 버튼을 클릭했을 때, "동의했습니다" 경고창을 띄우고 value값 확인 -->
+    <input type="checkbox" onclick="method1(this);" value="1">조항1
+    <input type="checkbox" onclick="method1(this);" value="2">조항2
+    <input type="checkbox" onclick="method1(this);" value="3">조항3
+    <input type="checkbox" onclick="method1(this);" value="4">조항4
+    
+    <script>
+
+        function method1(a) {
+            alert('동의했습니다');
+            console.log(a.value);
+        }
+    
+    </script>
+
+    <hr>
+
+    <!-- 2. 확인을 클릭했을 때, input태그의 공백여부, 기억하기의 체크여부 확인 -->
+    ID:<input type="text" id="id">
+    기억하기:<input type="checkbox" id="remeber">
+    <button type="button" id="check">확인</button>
+
+    <script>
+
+        var ch = document.getElementById("check");
+
+        ch.addEventListener("click", function() { // input태그의 공백여부
+
+            var id = document.getElementById("id");
+            var str = id.value;
+            var bool = true;
+            
+            for(var i = 0; i < str.length; i++) {
+                if(str[i] === ' ') {
+                    bool = false;
+                }
+            }
+            console.log(str);
+            if(bool === false) {
+                alert('공백은 사용하실 수 없습니다');
+            }
+            
+
+        });
+
+        ch.addEventListener("click", function() { // 기억하기 체크여부
+
+            var box = document.getElementById("remeber");
+
+            if(box.checked === true) {
+                console.log('기억합니다');
+                console.log(box.checked);
+            } else {
+                console.log('기억하지 않습니다');
+                console.log(box.checked);
+            }
+
+        });
+
+
+    </script>
+
+</body>
+</html>

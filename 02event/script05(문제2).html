@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 스크립트 태그 작성-->
+
+    <script>
+
+        window.onload = function() {
+            var nav = document.getElementById("ok1");
+            nav.addEventListener("click", function() {
+                if(confirm('이동하시겠습니까?')) {
+                    location.href = "https://www.naver.com";
+                }
+            })
+                
+            var gog = document.getElementById("ok2");
+            gog.addEventListener("click", function() {
+                if(confirm('이동하시겠습니까?')) {
+                    location.href = "https://www.google.com";
+                }
+            })
+
+            
+        }
+
+    </script>
+    
+    <button id="ok1">NAVER</button>
+    <button id="ok2">GOOGLE</button>
+
+
+</body>
+</html>

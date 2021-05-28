@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<body>
+    
+    <!-- 
+        태그에 직접 이벤트를 기입하는 형태(인라인이벤트)
+        이벤트 속성 안에는 순수한 js코드가 들어감
+     -->
+    
+     <!-- 1 -->
+     <button type="button" onclick="alert('sleep')">인라인이벤트버튼</button>
+    
+    <!-- 2 -->
+    <button type="button" onclick="function check() {
+        alert('hello');   
+    } check();">인라인이벤트버튼</button>
+
+    <!-- 3 -->
+    <button type="button" onclick="check2();">인라인이벤트버튼</button>
+
+
+    <!-- 
+        동일한 함수에 여러 이벤트를 연결할 때,
+        어떤 버튼을 클릭했는지 확인할 필요가 있는데 이때 this키워드를 넘겨줌.
+        여기서 사용되는 this는 실행되는 태그(엘리먼트)를 의미.
+     -->
+    <button type="button" onclick="this2(this);" id="a">1</button>
+    <button type="button" onclick="this2(this);" id="b">2</button>
+    <button type="button" onclick="this2(this);" id="c">3</button>
+    <button type="button" onclick="this2(this);" id="d">4</button>
+    
+    
+    <script>
+        function check2() {
+            alert('JS 인라인 이벤트');
+        }
+
+        function this2(a) {
+            console.log('confirm');
+            console.log(a)
+            console.log(a.innerHTML); /* 태그안에 들어있는 문자열 형태의 값 */
+            console.log(a.id);
+
+            a.innerHTML = 'hello world';
+            a.id = 'dlrow olleh';
+        }
+    </script>
+
+</body>
+</html>

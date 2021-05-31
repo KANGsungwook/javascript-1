@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 아이디 or 비밀번호가 변경될 때 마다 예시화면처럼 구현  -->
+    <!-- border-color속성과 innerHTML을 이용 -->
+    <section>
+        <form>
+
+            <label>아이디</label>
+            <input type="text" name="id" id="id"><br/>
+            <span class="idMsg" style="opacity: 0; color: red;">ID는 4글자 이상입니다</span><br/>
+
+            <label>비밀번호</label>
+            <input type="password" name="pw" id="pw"><br/>
+            <span class="pwMsg" style="opacity: 0; color: red;">PW는 9글자 이상입니다</span><br/>
+
+        </form>
+
+    </section>
+
+    
+    <script>
+        
+        var id = document.getElementById("id");
+        id.addEventListener("keyup", function() {
+            var span = document.querySelector(".idMsg");
+            
+            if(id.value.length < 4) {
+                span.style.opacity = "1";
+                id.style.borderColor = "red";
+            } else {
+                span.style.opacity = "0";
+                id.style.borderColor = "black";
+                id.style.borderBottomColor = "green";
+            }
+        });
+
+        id.addEventListener("blur", function() {
+            var span = document.querySelector(".idMsg");
+            
+            if(id.value.length === 0) {
+                span.style.opacity = "0";
+                id.style.borderColor = "black";
+            }
+        });
+
+        var pw = document.getElementById("pw");
+        pw.addEventListener("keyup", function() {
+            var spam = document.querySelector(".pwMsg");
+            if(pw.value.length < 9) {
+                spam.style.opacity = "1";
+                pw.style.borderColor = "red";
+            } else {
+                spam.style.opacity = "0";
+                pw.style.borderColor = "black";
+                pw.style.borderBottomColor = "green";
+            }
+        });
+
+        pw.addEventListener("blur", function() {
+            var span = document.querySelector(".pwMsg");
+            
+            if(pw.value.length === 0) {
+                span.style.opacity = "0";
+                pw.style.borderColor = "black";
+            }
+        });
+
+    </script>
+    
+</body>
+</html>

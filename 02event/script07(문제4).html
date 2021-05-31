@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>자바스크립트 카운트</h3>
+    
+    <input type="number" value="0" id="result" readonly>
+
+    <button type="button" onclick="count(this);">+</button>
+    <button type="button" onclick="count(this);">-</button>
+    
+
+    <script>
+    
+        var rs = document.getElementById("result");
+        
+
+        function count(a) {
+            if(a.innerHTML === '+') {
+
+                rs.value++;
+
+            } else if(a.innerHTML === '-' && rs.value > 0) {
+
+                rs.value--;
+
+            }
+        }
+
+    </script>
+    
+    
+</body>
+</html>

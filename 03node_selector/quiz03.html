@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        <img src="img/1.jpg" width="200" style="border: 3px solid black;"><br/>
+
+        <select class="select">
+            <option value="img/1.jpg">봄</option>
+            <option value="img/2.jpg">여름</option>
+            <option value="img/3.jpg">가을</option>
+            <option value="img/4.jpg">겨울</option>
+        </select>
+
+        <span>변경할 색상:</span>
+        <input type="color" class="input">
+    </form>
+    
+    <script>
+
+        // 선택자가 다중인지 단일인지에 따라 접근 방법이 다름.
+        // 다중은 배열이므로 [0]을 통해 접근해야함. 아니면 그냥 단일로해
+        var sel = document.querySelector(".select");
+
+        console.log(sel);
+        
+        var img = document.querySelector("img");
+        sel.addEventListener("change", function() {
+            // var opt = sel.getElementsByTagName("option");
+            // console.log(opt[0].value);
+
+            // select태그는 .value를 통해 바로 option값에 접근 가능하다
+            // console.log(sel.value)
+
+            // console.log(img.src);
+            img.src = sel.value;
+        });
+
+        var col = document.querySelector(".input");
+        col.onchange = function() {
+            img.style.border = '3px solid' + col.value;
+        }
+
+    </script>
+
+</body>
+</html>

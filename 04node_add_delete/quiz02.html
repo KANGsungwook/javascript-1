@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="head">
+        <h2>할일 목록 만들기</h2>
+    </div>
+
+    <input type="text" id="name" placeholder="이름을 입력하세요">
+    <button type="button" id="btn1">확인</button><br/>
+
+    <input type="text" id="work" placeholder="당신의 할일을 적으세요">
+    <button type="button" id="btn2">확인</button><br/>
+
+    <ul class="list"></ul>
+
+    <script>
+
+        var btn1 = document.getElementById("btn1");
+        btn1.onclick = function() {
+
+            var name = document.getElementById("name");
+            var h3 = document.createElement("h3");
+            var text = document.createTextNode(name.value + "님 안녕하세요");
+            h3.appendChild(text);
+            
+            document.querySelector(".head").appendChild(h3);
+
+            /* div태그를 만들어서 적용하면 되는데 head태그로 만들면 null값이 나옴 */
+
+            name.style.display = "none";
+            btn1.style.display = "none";
+            
+        }
+
+        var btn2 = document.getElementById("btn2");
+        btn2.onclick = function() {
+
+            var work = document.getElementById("work");
+            var li = document.createElement("li");
+            var text = document.createTextNode(work.value);
+            li.appendChild(text);
+
+            document.querySelector(".list").appendChild(li);
+            work.value = "";
+        }
+
+    </script>
+
+</body>
+</html>

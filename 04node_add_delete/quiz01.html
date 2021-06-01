@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {border-spacing: 0; border-collapse: collapse/* 겹치는 영역에 대해 합치기 */;}
+        thead th {
+            border: 1px solid #777;
+        }
+    </style>
+</head>
+<body>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>교사</th>
+                <th>훈련과목</th>
+                <th>담당자</th>
+                <th>훈련내용</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" size="3"></td>
+                <td><input type="text"></td>
+                <td><input type="text" size="5"></td>
+                <td><input type="text"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" id="btn1">5개추가하기</button>
+    <button type="button" id="btn2">1개추가하기</button>
+
+    <script>
+
+        
+        var btn1 = document.getElementById("btn1");
+        btn1.onclick = function() {
+
+            for(var i = 0; i < 5; i++) {
+                var tr = document.createElement("tr");
+                var td1 = document.createElement("td");
+                td1.innerHTML = "<input type='text' size='3'>";
+        
+                var td2 = document.createElement("td");
+                td2.innerHTML = "<input type='text'>";
+        
+                var td3 = document.createElement("td");
+                td3.innerHTML = "<input type='text' size='5'>";
+        
+                var td4 = document.createElement("td");
+                td4.innerHTML = "<input type='text'>";
+        
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tr.appendChild(td4);
+                document.querySelector("tbody").appendChild(tr);
+            }
+        }
+        
+        var btn2 = document.getElementById("btn2");
+        btn2.onclick = function() {
+
+            var tr = document.createElement("tr");
+            var td1 = document.createElement("td");
+            td1.innerHTML = "<input type='text' size='3'>";
+    
+            var td2 = document.createElement("td");
+            td2.innerHTML = "<input type='text'>";
+    
+            var td3 = document.createElement("td");
+            td3.innerHTML = "<input type='text' size='5'>";
+    
+            var td4 = document.createElement("td");
+            td4.innerHTML = "<input type='text'>";
+    
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+    
+            document.querySelector("tbody").appendChild(tr);
+        }
+
+    </script>
+
+</body>
+</html>

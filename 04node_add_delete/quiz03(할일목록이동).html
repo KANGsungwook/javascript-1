@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
 </head>
 <body>
     
@@ -19,7 +20,7 @@
     <button type="button" id="btn2">확인</button><br/>
 
     <ul class="list">
-       <!-- <button type="button" class="btn3" style="display: none;"></button> -->
+       
     </ul>
 
     <script>
@@ -50,7 +51,10 @@
                 var text = document.createTextNode(work.value);
                 li.appendChild(text);
     
-                li.innerHTML += "<button type='button' onclick='btn3(this);'>X</button>";
+                li.innerHTML += "<button type='button' onclick='btn3(this);'>X</button>"
+                                + "<button type='button' onclick='up(this);'>↑</button>"
+                                + "<button type='button' onclick='down(this);'>↓</button>";
+                
                 document.querySelector(".list").appendChild(li);
                 
                 work.value = "";
@@ -69,9 +73,48 @@
             //2. x버튼 클릭시 부모요소 li를 선택해 삭제
             
             list.removeChild(a.parentElement);
+
+            // console.log(event.target);
+            // event.target -> 이벤트가 발생한 태그 선택해줌
+            
             
         }
 
+        function up(node) {
+            var current = node.parentElement;
+            var previous = current.previousElementSibling;
+
+            if(previous == null) {
+                alert('첫번째 행입니다.');
+                return;
+            }
+
+            if(confirm("변경하시겠습니까?")) {
+                
+                var list = document.querySelector(".list");
+                list.insertBefore(current, previous);
+
+            }
+        }
+
+        function down(node) {
+            
+            var current = node.parentElement;
+            var next = current.nextElementSibling;
+
+            if(next == null) {
+                alert('마지막 행입니다.');
+                return;
+            }
+
+            if(confirm('변경하시겠습니까?')) {
+
+                var list = document.querySelector(".list");
+                list.insertBefore(next, current);
+
+            }
+
+        }
 
         
 

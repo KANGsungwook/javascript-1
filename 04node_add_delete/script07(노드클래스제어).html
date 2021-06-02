@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 이 버튼은 클래스 이름 btn, btn-defalut를 지니고 있습니다 -->
+    <button type="button" class="btn btn-defalut" id="btn">버튼</button>
+
+    <script>
+
+        var btn = document.getElementById("btn");
+
+        console.log(btn.type);
+        console.log(btn.id);
+        // console.log(btn.class); //class는 예약어이기 때문에 선택하는 방법이 다름
+
+        console.log(btn.className); // 클래스 이름을 얻는다
+
+        console.log(btn.classList); // 클래스 이름을 리스트로 얻음
+
+        console.log(btn.classList[0]);
+        console.log(btn.classList[1]);
+
+        //눈에 안보이는 원본객체에 정의되어 있는 함수 proto
+
+        btn.classList.add("newBtn");
+        console.log(btn.classList);
+
+        btn.classList.remove("newBtn");
+        console.log(btn.classList);
+
+        ;
+        console.log(btn.classList.contains("newBtn"));
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center {text-align: center;}
+        
+        .content {overflow: hidden; width: 70%; margin: 0 auto; border: 1px solid #777;}
+        .left {width: 50%; float: left; box-sizing: border-box;}
+        .content, .left {padding: 5px;}
+        .inner {border: 1px solid #777; height: 300px;}
+
+        a {dis;}
+
+    </style>
+</head>
+<body>
+    
+    <script>
+        window.onload = function() {
+            var body = document.body;
+            var all = document.querySelectorAll("h2, p, a");
+            var dark = document.getElementById("dark");
+            dark.onclick = function() {
+
+                if(dark.className == 'bright') {
+                    body.style.backgroundColor = "white";
+                    all[0].style.color = "black";
+                    all[1].style.color = "black";
+                    all[2].style.color = "black";
+
+                    dark.className = "dark";
+                    dark.innerHTML = "어둡게보기";
+
+                } else if(dark.className == 'dark') {
+                    body.style.backgroundColor = "black";
+                    all[0].style.color = "white";
+                    all[1].style.color = "white";
+                    all[2].style.color = "white";
+
+                    dark.className = "bright";
+                    dark.innerHTML = "밝게보기";
+                }
+            }
+
+            var name = document.getElementById("detail");
+            name.onclick = function() {
+
+                if(name.className == 'name') {
+                    all[0].innerHTML = "토글형태 활용하기";
+                    all[1].innerHTML = "홍길자<br/>20세<br/>능력단위<br/>Java, Oracle, JSP, CSS, Javascript";
+                    all[2].style.display = "none";
+                    name.className = 'detail';
+                    name.innerHTML = '내용보기';
+
+                } else {
+                    all[0].innerHTML = "style속성 활용하기";
+                    all[1].innerHTML = "자바스크립트(영어: JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다.\
+                                        이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다.\
+                                        또한 Node.js와 같은 런타임 환경과 같이 서버 프로그래밍에도 사용되고 있다.<br/>";
+                    all[2].style.display = "inline";
+                    name.className = 'name';
+                    name.innerHTML = '이름보기';
+                }
+
+
+            }
+
+        }
+    </script>
+
+    <head>
+        <div class="center">
+            <h2>style속성 활용하기</h2>
+            <button type="button" class="dark" id="dark">어둡게보기</button>
+            <button type="button" class="name" id="detail">이름보기</button>
+            <hr/>
+        </div>
+    </head>
+    <section>
+        <div class="content"><!-- 넓이 -->
+            <div class="left"><!-- 왼쪽영역 -->
+                <div class="inner">
+                    <img src="img/1.jpg" width=100% height="100%">
+                </div>
+            </div>
+            <div class="left"><!-- 오른쪽영역 -->
+                <div class="inner" style="overflow: auto;">
+                    <p>
+                        자바스크립트(영어: JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 Node.js와 같은 런타임 환경과 같이 서버 프로그래밍에도 사용되고 있다.<br/>
+                        <a href="#">위키백과</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

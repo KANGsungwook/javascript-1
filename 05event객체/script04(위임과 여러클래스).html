@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <section id="section">
+        <div>
+            <span>홍길동</span>
+            <button type="button" class="btn sel">선택</button>
+            <button type="button" class="btn del">삭제</button>
+        </div>
+        <div>
+            <span>이순신</span>
+            <button type="button" class="btn sel">선택</button>
+            <button type="button" class="btn del">삭제</button>
+        </div>
+        <div>
+            <span>신사임당</span>
+            <button type="button" class="btn sel">선택</button>
+            <button type="button" class="btn del">삭제</button>
+        </div>
+        
+    </section>
+
+    <script>
+
+        var section = document.querySelector("#section"); //#id명
+        section.onclick = function() {
+
+            // console.log(event.target.classList);
+
+            if(event.target.classList.contains("sel")) { //sel버튼이라면
+                event.target.previousElementSibling.style.color = "red";
+            } else if(event.target.classList.contains("del")) {
+                event.target.parentElement.remove();
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

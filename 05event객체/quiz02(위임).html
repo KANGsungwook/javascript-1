@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {border-collapse: collapse; border-spacing: 0;}
+        tr, td, th {border: 1px solid #777;}
+    </style>
+
+</head>
+<body>
+    
+    <table>
+        <thead>
+            <tr>
+                <td>번호</td>
+                <td>제목</td>
+                <td>내용</td>
+                <td>삭제</td>
+            </tr>
+        </thead>
+        <tbody class="parent">
+            <tr>
+                <td>1</td>
+                <td>첫글</td>
+                <td>hello world</td>
+                <td><button type="button">삭제</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>이글</td>
+                <td>파퍄퍄퍄퍞</td>
+                <td><button type="button">삭제</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>세글</td>
+                <td>엠투엠</td>
+                <td><button type="button">삭제</button></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>내글</td>
+                <td>LA다졌으</td>
+                <td><button type="button">삭제</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+
+        var parent = document.querySelector(".parent");
+        parent.onclick = function() {
+            if(event.target.tagName != 'BUTTON') return;
+            event.target.parentElement.parentElement.remove();
+        }
+
+        //다중이벤트
+        // var list = document.querySelectorAll("button");
+        // for(var i = 0; i < list.length; i++) {
+        //     list[i].onclick = function() {
+        //         event.target.parentElement.parentElement.remove();
+        //     }
+        // }
+
+    </script>
+
+</body>
+</html>

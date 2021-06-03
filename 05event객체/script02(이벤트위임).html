@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>이벤트 위임 - 부모에 이벤트를 걸어두면 자식태그에도 자동으로 전파되는 특징</h3>
+    
+    <ul class="parent">
+        <li>1. 홍길동</li>
+        <li>2. 이순신</li>
+        <li>3. 홍길자</li>
+        <li>4. 신사임당</li>
+        <li>5. 세종대왕</li>
+    </ul>
+
+    <p class="result"></p>
+
+    <script>
+
+        var parent = document.querySelector(".parent");
+        var result = document.querySelector(".result");
+        parent.onclick = function() {
+            
+            // console.log(event.target.tagName);
+
+            console.log(event.target); //이벤트를 적용한 타겟
+            console.log(event.currentTarget); // 이벤트가 실제로 걸려있는 부모
+
+            //위임을 사용하면 부모를 클릭해도 적용되는 문제 발생
+            //자식태그가 아니면 종료하는 방법으로 이벤트 종료
+            if(event.target.tagName != 'LI') return; //태그가 LI가 아니라면 종료
+
+            result.innerHTML = event.target.innerHTML;
+        }
+
+    </script>
+</body>
+</html>

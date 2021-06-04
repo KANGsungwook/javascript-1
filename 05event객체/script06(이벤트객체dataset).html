@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul class="nameList">
+        <li><a href="#" data-info='{"id":"kkk", "age":"20"}'>홍길동</a></li>
+        <li><a href="#" data-info='{"id":"aaa", "age":30"}'>이순신</a></li>
+        <li><a href="#" data-info='{"id":"bbb", "age":"40"}'>홍길자</a></li>
+        <li><a href="#" data-info='{"id":"ccc", "age":"50"}'>김유신</a></li>
+    </ul>
+
+    <script>
+
+        var nameList = document.querySelector(".nameList");
+        nameList.onclick = function() {
+            
+            event.preventDefault(); //a기본 이벤트를 중단
+            if(event.target.tagName != 'A') return; //a가 아니라면 종료
+
+            console.log(event.target.href);
+
+            //data-xx로 저장한 속성은 dataset의 xx값으로 저장됩니다.
+            console.log(event.target.dataset.info);
+
+            var data = JSON.parse(event.target.dataset.info);
+            console.log(data);
+            
+
+        }
+
+    </script>
+
+</body>
+</html>

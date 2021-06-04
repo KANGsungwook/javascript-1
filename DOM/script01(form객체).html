@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form name="validateForm">
+        아이디:<input type="text" name="id"><br/>
+        비밀번호:<input type="password" name="pw"><br/>
+
+        <select name="phone">
+            <option>선택</option>
+            <option>010</option>
+            <option>011</option>
+            <option>016</option>
+            <option>018</option>
+        </select>
+        <br/>
+
+        자기소개:
+        <textarea name="intro"></textarea><br/>
+
+        분야:
+        <input type="checkbox" name="inter">JAVA
+        <input type="checkbox" name="inter">JSP
+        <input type="checkbox" name="inter">JS
+        <input type="checkbox" name="inter">DATABASE
+
+        <br/>
+        <button type="button" id="regist">가입</button>
+    </form>
+    
+    <!-- form객체는 document의 하위객체이기 때문에 유일하게 name속성으로 form요소에 접근이 가능하다 -->
+
+    <script>
+
+        var regist = document.getElementById("regist");
+        regist.onclick = function() {
+
+            // console.log(document.validateForm);
+            console.log(document.validateForm.id);
+            console.log(document.validateForm.pw);
+            console.log(document.validateForm.phone);
+            console.log(document.validateForm.intro);
+            console.log(document.validateForm.inter);
+            
+            if(document.validateForm.id.value == '') {//공백여부나 정규표현식으로 검증
+            
+                document.validateForm.id.focus(); //해당위치에 포커스
+                return;
+            } else if(confirm('가입하시겠습니까?')) {
+                document.validateForm.submit(); //JS서브밋
+            }
+
+        }
+
+    </script>
+
+
+</body>
+</html>

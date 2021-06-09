@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    6a58694d4665766938327370496e75
+
+    <h2>서울시 강남구 공공와이파이 위치정보</h2>
+
+    <script>
+
+        /* 좌표값, 실제주소 확인 */
+
+        fetch("http://openapi.seoul.go.kr:8088/6a58694d4665766938327370496e75/json/TbPublicWifiInfo_GN/1/100/")
+            .then(function(response) {
+                if(response.status != 200) {
+                    alert("네트워크 에러");
+                    return;
+                } else {
+                    return response.json();
+                }
+            })
+            .then(function(text) {
+                
+                var list = text.TbPublicWifiInfo_GN.row;
+                console.log(list);
+                for(var i = 0; list.length; i++) {
+                    console.log(list[i].X_SWIFI_ADRES1)
+                    console.log(list[i].X_SWIFI_ADRES2)
+                    console.log(list[i].LAT)
+                    console.log(list[i].LNT)
+
+                }
+                console.log(list);
+                
+            });
+
+
+    </script>
+    
+</body>
+</html>

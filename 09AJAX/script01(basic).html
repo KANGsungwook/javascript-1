@@ -57,13 +57,18 @@
 
             //4.
             
-            fetch("hi.txt").then(func1);
+            // fetch("hi.txt").then(func1);
 
-            function func1(response) {
-                console.log(1);
-            }
+            // function func1(response) {
+            //     console.log(1);
+            // }
 
-            console.log(2);
+            // console.log(2);
+
+            fetch("hi.txt")
+            .then(function(response) {
+                console.log(response.text());
+            });
 
         }
 
